@@ -10,6 +10,14 @@ angular.module('friendApp').controller('FriendController', function ($scope) {
 		{label: "Country", value: "current_location.country"}
 	];
 
+	var formatFriends = function(arr){
+		var formated = [];
+		arr.map(function(currentValue){
+			if(!currentValue.current_location){
+				currentValue.current_location = {name: ''};
+			}
+		});
+	}
 
 	$scope.friends = [
 	  {
